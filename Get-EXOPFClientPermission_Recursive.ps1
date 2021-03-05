@@ -312,4 +312,4 @@ Foreach ($pf in $pfs)
     Enumerate-PFAccess ($pf)
 }
 #Exports the global array to a .csv
-$Global:Records | select Identity,user,@{name='AccessRights';Expression={[string]::join(";",($_.accessrights))}},ParentGroup,NestedGroup |Export-Csv $OutputFile -NoTypeInformation
+$Global:Records | select Identity,user,AccessRights,ParentGroup,NestedGroup |Export-Csv $OutputFile -NoTypeInformation
